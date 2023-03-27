@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+     <div class="wrap">
+        <div class="trigger_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+      <div class="wrap_comp">
+          <h1>
+            Oloun 
+          </h1>
+          <h1>Weoutchea</h1>
+          <img src="./zino.png" alt="">
+      </div>
+     </div>
+    <div class="scaffold">
+        <ul>
+            <li onmouseenter="hover(1)" onmouseleave="leave(1)">Red Sea</li>
+            <li onmouseenter="hover(2)" onmouseleave="leave(2)">Lions Den</li>
+            <li onmouseenter="hover(3)" onmouseleave="leave(3)">Plagues</li>
+            <li onmouseenter="hover(4)" onmouseleave="leave(4)">Burning Bush</li>
+        </ul>
+        <img src="https://pbs.twimg.com/media/Fr5qcDZWcAAbLdT?format=jpg&name=900x900" alt="">
+        <img src="https://pbs.twimg.com/media/Fr5quUrXsAAd0Rc?format=jpg&name=900x900" alt="">
+        <img src="https://pbs.twimg.com/media/Fr5rE52WYAUinBb?format=jpg&name=900x900" alt="">
+        <img src="https://pbs.twimg.com/media/Fr5q4nCWcAEES-o?format=jpg&name=900x900" alt="">
+        
+    </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+    integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+    <script>
+        let open = false;
+        const trigger = document.querySelector(".trigger_btn");
+        const scaff = document.querySelector(".scaffold");
+        trigger.addEventListener("click", ()=>{
+              trigger.classList.toggle("open");
+               const amount = open ? 0 : 100;
+               gsap.timeline().to(scaff, 0.4, {
+                 "--scaff-1":amount,
+                 ease: "Power1.easeOut"
+               }).to(scaff, 0.4, {
+                 "--scaff-2":amount,
+                 ease: "Power1.easeOut"
+               }, 0.05)
+               .to(scaff, 0.4, {
+                 "--scaff-3":amount,
+                 ease: "Power1.easeOut"
+               }, 0.15)
+               .to(scaff, 0.4, {
+                 "--scaff-4":amount,
+                 ease: "Power1.easeOut"
+               }, 0.2)
+               .to(scaff, 0.4, {
+                 "--scaff-5":amount,
+                 ease: "Power1.easeOut"
+               }, 0.25)
+               .to(scaff, 0.4, {
+                 "--scaff-6":amount,
+                 ease: "Power1.easeOut"
+               }, 0.3)
+               .to(scaff, 0.4, {
+                 "--scaff-7":amount,
+                 ease: "Power1.easeOut"
+               }, 0.35)
+               .to(scaff, 0.4, {
+                 "--scaff-8":amount,
+                 ease: "Power1.easeOut"
+               }, 0.4)
+               .to(scaff, 0.4, {
+                 "--scaff-9":amount,
+                 ease: "Power1.easeOut"
+               }, 0.45)
+               .to(scaff, 0.4, {
+                 "--scaff-10":amount,
+                 ease: "Power1.easeOut"
+               }, 0.5)
+               open = !open;
+        })
+
+        const arr = document.querySelectorAll(".scaffold img");
+        const hover =(num)=>{
+            let elem = arr[num -1];
+            elem.classList.toggle("pp");
+        }
+        const leave=(num)=>{
+            let elem = arr[num -1];
+            elem.classList.toggle("pp");
+        }
+
+    </script>
+</body>
+</html>
